@@ -34,7 +34,7 @@
               <div class="info-box">
                 <i class="bi bi-telephone"></i>
                 <h3>Call Us</h3>
-                <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                <p>+91 9688348987<br> <span style="color: transparent;"> number - 2 </span> </p>
               </div>
             </div>
             <div class="col-md-6">
@@ -118,6 +118,7 @@
       })
       .then(response => console.log('Success!', response))
       .catch(error => console.error('Error!', error.message))
+      // sendEmail();
     document.getElementById("contactform").reset();
     // Swal.fire(
     //   'Good job!',
@@ -127,4 +128,28 @@
     // )
   });
 </script>
+<!-- <script src="https://smtpjs.com/v3/smtp.js"></script>
+<script type="text/javascript">
+  function sendEmail() {
+    userName = document.getElementById("name").value;
+  
+    // console.log(userName);
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username: "cloud@bitsathy.ac.in",
+        Password: "Cloud@987",
+        To: document.getElementById('email').value,
+        From: 'cloud@bitsathy.ac.in',
+        Subject: "Reply | Stock Market School",
+        Body: '<p>Hi <span><strong>' +
+          userName +
+          '</strong></span>,<p>Thank you for showing interest in learning with us. <br>Our team will get back to you shortly.</p><strong>Thanks <br>Stock Market School</strong>',
+      })
+      .then(function (message) {
+        // alert("mail sent successfully")
+        console.log(userName);
+        console.log(document.getElementById('email').value);
+      });
+  }
+</script> -->
 {% endblock %}
