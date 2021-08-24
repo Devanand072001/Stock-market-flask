@@ -1,5 +1,6 @@
 from flask import Flask, redirect, render_template
 import flask
+from flask.helpers import url_for
 
 app = Flask(__name__)
 
@@ -7,6 +8,7 @@ app = Flask(__name__)
 @app.route('/home')
 @app.route("/")
 def home():
+   
     return render_template("index.html")
 
 
@@ -48,6 +50,11 @@ def carousel():
 @app.route('/terms-and-conditions')
 def terms():
     return render_template("terms-and-conditions.html")
+
+@app.errorhandler(404)
+def not_found(e):
+    print(e)
+    return redirect(url_for('home'))
 
 
 if __name__ == '__main__':
